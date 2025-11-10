@@ -9,7 +9,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    background: #e8eaed;
+    background: #575960;
     min-height: 100vh;
     padding: 20px;
 }
@@ -18,15 +18,15 @@ body {
 .container {
     max-width: 900px;
     margin: 0 auto;
-    background: white;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    background: #FCFCFC;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
     border-radius: 8px;
     overflow: hidden;
 }
 
 /* Header */
 .header {
-    background: #4a6b8a;
+    background: #052439;
     color: white;
     padding: 50px 40px;
     text-align: center;
@@ -78,10 +78,10 @@ body {
 
 .section-title {
     font-size: 1.8rem;
-    color: #4a6b8a;
+    color: #02111B;
     margin-bottom: 25px;
     padding-bottom: 10px;
-    border-bottom: 3px solid #4a6b8a;
+    border-bottom: 3px solid #02111B;
     display: inline-block;
 }
 
@@ -94,7 +94,7 @@ body {
 }
 
 .skill-item {
-    background: #5a7a9a;
+    background: #30292F;
     color: white;
     padding: 15px 20px;
     border-radius: 6px;
@@ -127,7 +127,7 @@ body {
 }
 
 .company {
-    color: #4a6b8a;
+    color: #3F4045;
     font-weight: 600;
     font-size: 1rem;
 }
@@ -148,35 +148,6 @@ body {
 .responsibilities li {
     margin-bottom: 8px;
     padding-left: 10px;
-}
-
-/* Education */
-.education-item {
-    margin-bottom: 20px;
-}
-
-.education-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 10px;
-    gap: 20px;
-}
-
-.degree {
-    font-size: 1.2rem;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.institution {
-    color: #4a6b8a;
-    font-weight: 600;
-}
-
-.education-description {
-    color: #555;
-    line-height: 1.7;
 }
 
 /* Footer */
@@ -233,8 +204,7 @@ body {
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     }
 
-    .experience-header,
-    .education-header {
+    .experience-header {
         flex-direction: column;
         gap: 5px;
     }
@@ -280,13 +250,13 @@ body {
     }
 
     .header {
-        background: #4a6b8a;
+        background: #5a7a6a;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
 
     .skill-item {
-        background: #5a7a9a;
+        background: #6a8a7a;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
