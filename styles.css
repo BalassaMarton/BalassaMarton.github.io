@@ -9,7 +9,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #e8eaed;
     min-height: 100vh;
     padding: 20px;
 }
@@ -26,7 +26,7 @@ body {
 
 /* Header */
 .header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #4a6b8a;
     color: white;
     padding: 50px 40px;
     text-align: center;
@@ -59,11 +59,6 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    transition: opacity 0.3s ease;
-}
-
-.contact-item:hover {
-    opacity: 0.8;
 }
 
 .icon {
@@ -83,10 +78,10 @@ body {
 
 .section-title {
     font-size: 1.8rem;
-    color: #667eea;
+    color: #4a6b8a;
     margin-bottom: 25px;
     padding-bottom: 10px;
-    border-bottom: 3px solid #667eea;
+    border-bottom: 3px solid #4a6b8a;
     display: inline-block;
 }
 
@@ -99,19 +94,13 @@ body {
 }
 
 .skill-item {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #5a7a9a;
     color: white;
-    padding: 15px 0px;
+    padding: 15px 20px;
     border-radius: 6px;
     text-align: center;
     font-weight: 500;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     white-space: nowrap;
-}
-
-.skill-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
 /* Experience */
@@ -138,7 +127,7 @@ body {
 }
 
 .company {
-    color: #667eea;
+    color: #4a6b8a;
     font-weight: 600;
     font-size: 1rem;
 }
@@ -181,7 +170,7 @@ body {
 }
 
 .institution {
-    color: #667eea;
+    color: #4a6b8a;
     font-weight: 600;
 }
 
@@ -291,13 +280,13 @@ body {
     }
 
     .header {
-        background: #667eea;
+        background: #4a6b8a;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
 
     .skill-item {
-        background: #667eea;
+        background: #5a7a9a;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
