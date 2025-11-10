@@ -93,18 +93,20 @@ body {
 /* Skills Grid */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 15px;
+    max-width: 100%;
 }
 
 .skill-item {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 15px 20px;
+    padding: 15px 0px;
     border-radius: 6px;
     text-align: center;
     font-weight: 500;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    white-space: nowrap;
 }
 
 .skill-item:hover {
@@ -198,6 +200,12 @@ body {
 }
 
 /* Responsive Design */
+@media (min-width: 769px) {
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
 @media (max-width: 768px) {
     body {
         padding: 10px;
@@ -233,7 +241,7 @@ body {
     }
 
     .skills-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     }
 
     .experience-header,
@@ -263,6 +271,10 @@ body {
     .job-title,
     .degree {
         font-size: 1.1rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
 }
 
