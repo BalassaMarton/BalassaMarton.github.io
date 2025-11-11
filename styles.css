@@ -160,11 +160,6 @@ body {
 }
 
 /* Responsive Design */
-@media (min-width: 769px) {
-    .skills-grid {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    }
-}
 
 @media (max-width: 768px) {
     body {
@@ -198,10 +193,6 @@ body {
 
     .section-title {
         font-size: 1.5rem;
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     }
 
     .experience-header {
@@ -239,9 +230,11 @@ body {
 
 /* Print Styles */
 @media print {
+
     body {
         background: white;
         padding: 0;
+        font-size: 12px;
     }
 
     .container {
@@ -250,22 +243,48 @@ body {
     }
 
     .header {
-        background: #5a7a6a;
+        padding: 30px 25px;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
 
-    .skill-item {
-        background: #6a8a7a;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
+    .name {
+        font-size: 1.75rem;
+    }
+
+    .tagline {
+        font-size: 0.9rem;
     }
 
     .section {
-        page-break-inside: avoid;
+        padding: 25px;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    .skill-item {
+        padding: 10px 15px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
     }
 
     .experience-item {
+        margin-bottom: 20px;
         page-break-inside: avoid;
+    }
+
+    .job-title {
+        font-size: 1.1rem;
+    }
+
+    .responsibilities {
+        font-size: 0.9rem;
     }
 }
