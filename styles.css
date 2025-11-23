@@ -152,7 +152,7 @@ body {
     border-radius: 6px;
     text-align: center;
     font-weight: 500;
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 /* Experience */
@@ -276,8 +276,7 @@ body {
         padding: 25px 20px;
     }
 
-    .job-title,
-    .degree {
+    .job-title {
         font-size: 1.1rem;
     }
 
