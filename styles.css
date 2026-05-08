@@ -325,6 +325,11 @@ body {
         font-size: 1.3rem;
     }
 
+    .contact {
+        flex-direction: row;
+        gap: 20px;
+    }
+
     .skills-grid {
         grid-template-columns: repeat(4, 1fr);
         gap: 10px;
