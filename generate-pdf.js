@@ -1,0 +1,36 @@
+const puppeteer = require('puppeteer-core');
+const path = require('path');
+const fs = require('fs');
+
+const chromePaths = [
+    'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+    'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
+    `${process.env.LOCALAPPDATA}\\Google\\Chrome\\Application\\chrome.exe`,
+];
+
+function findChrome() {
+    for (const p of chromePaths) {
+        if (fs.existsSync(p)) return p;
+    }
+    throw new Error('Chrome not found. Update chromePaths in generate-pdf.js with your Chrome path.');
+}
+
+(async () => {
+    const browser = await puppeteer.launch({ executablePath: findChrome() });
+    const page = await browser.newPage();
+
+    const htmlPath = path.resolve(__dirname, 'index.html');
+    // networkidle0 waits for Font Awesome icons to finish loading from CDN
+    await page.goto(`file:///${htmlPath}`, { waitUntil: 'networkidle0' });
+
+    const outputPath = path.resolve(__dirname, 'downloads', 'MartonBalassa_software_developer.pdf');
+    await page.pdf({
+        path: outputPath,
+        format: 'A4',
+        printBackground: true,
+        margin: { top: '2cm', right: '2cm', bottom: '2cm', left: '1cm' },
+    });
+
+    await browser.close();
+    console.log(`PDF saved to ${outputPath}`);
+})();
