@@ -36,12 +36,19 @@ function findChrome() {
     const outputPath = process.env.PDF_OUTPUT_PATH
         ? path.resolve(__dirname, process.env.PDF_OUTPUT_PATH)
         : defaultOutputPath;
+    const margin = process.env.PDF_MARGIN || '12mm';
     fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 
     await page.pdf({
         path: outputPath,
         format: 'A4',
-        printBackground: true 
+        printBackground: true,
+        margin: {
+            top: margin,
+            right: margin,
+            bottom: margin,
+            left: margin,
+        },
     });
 
     await browser.close();
