@@ -41,8 +41,7 @@ function findChrome() {
     await page.pdf({
         path: outputPath,
         format: 'A4',
-        printBackground: true,
-        margin: { top: '2cm', right: '2cm', bottom: '2cm', left: '1cm' },
+        printBackground: true 
     });
 
     await browser.close();

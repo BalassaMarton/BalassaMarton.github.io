@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Source Sans 3', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: black;
     background: #575960;
@@ -60,6 +60,13 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
+}
+
+.contact-item .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
 /* Content Links (non-contact) */
