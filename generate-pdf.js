@@ -32,7 +32,12 @@ function findChrome() {
     // networkidle0 waits for Font Awesome icons to finish loading from CDN
     await page.goto(`file:///${htmlPath}`, { waitUntil: 'networkidle0' });
 
-    const outputPath = path.resolve(__dirname, 'downloads', 'MartonBalassa_software_developer.pdf');
+    const defaultOutputPath = path.resolve(__dirname, 'downloads', 'MartonBalassa_software_developer.pdf');
+    const outputPath = process.env.PDF_OUTPUT_PATH
+        ? path.resolve(__dirname, process.env.PDF_OUTPUT_PATH)
+        : defaultOutputPath;
+    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+
     await page.pdf({
         path: outputPath,
         format: 'A4',
