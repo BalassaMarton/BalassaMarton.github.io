@@ -3,20 +3,29 @@ const path = require('path');
 const fs = require('fs');
 
 const chromePaths = [
+    process.env.CHROME_PATH,
     'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
     'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
     `${process.env.LOCALAPPDATA}\\Google\\Chrome\\Application\\chrome.exe`,
+    '/usr/bin/google-chrome',
+    '/usr/bin/google-chrome-stable',
+    '/usr/bin/chromium-browser',
+    '/usr/bin/chromium',
 ];
 
 function findChrome() {
     for (const p of chromePaths) {
-        if (fs.existsSync(p)) return p;
+        if (p && fs.existsSync(p)) return p;
     }
-    throw new Error('Chrome not found. Update chromePaths in generate-pdf.js with your Chrome path.');
+    throw new Error('Chrome not found. Set CHROME_PATH or update chromePaths in generate-pdf.js.');
 }
 
 (async () => {
-    const browser = await puppeteer.launch({ executablePath: findChrome() });
+    const browser = await puppeteer.launch({
+        executablePath: findChrome(),
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
     const page = await browser.newPage();
 
     const htmlPath = path.resolve(__dirname, 'index.html');
